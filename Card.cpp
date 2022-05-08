@@ -5,13 +5,8 @@
 
 
 
-//----------------------constructor--------------------------
-Card Card(CardType type, const CardStats& stats){
-    m_effects = type;
-    m_stats = stats;
-}
 //----------------------ApllyEncounter-----------------------
-void applyEncounter(Player& player) const{
+void Card::applyEncounter(Player& player) const{
     if(m_effects == CardType::Battle){
         bool win = true;
         if(player.getAttackStrength()>=m_stats->force){
@@ -49,7 +44,7 @@ void applyEncounter(Player& player) const{
     }
 }
 //----------------------PrintCardInfo------------------------
-    void printInfo() const {
+    void Card::printInfo() const {
         if (m_effects == CardType::Battle){
             printBattleCardInfo(m_stats);
         }
@@ -66,13 +61,6 @@ void applyEncounter(Player& player) const{
             printTreasueCardInfo(m_stats);
         }
     }
-
-
-
-
-
-
-
 
 
 
