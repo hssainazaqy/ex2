@@ -14,14 +14,14 @@ public:
     /*
      * C'tor of player class
      *
-     * @param name - The name of the player.
+     * @param m_name - The m_name of the player.
      * @param max_hp - The max hp of the player.
      * @param force - The force of the player.
      * @return
      *      A new instance of Player.
     */
     explicit Player(char* _name, int _max_hp = 100, int _force = 5) 
-    : name(_name), max_hp(_max_hp), force(_force) , level(1), hp(_max_hp), coins(0){
+    : m_name(_name), m_max_hp(_max_hp), m_force(_force) , m_level(1), m_hp(_max_hp), m_coins(0){
     }
 
 
@@ -35,12 +35,12 @@ public:
 
     
     /*
-     * Levels up the player 1 level:
+     * Levels up the player 1 m_level:
      *
      * @return
      *      void
     */
-    void levelup();
+    void levelUp();
     
     
     /*
@@ -133,12 +133,12 @@ public:
 
 
 private:
-    char* name;
-    int level;
-    int force;
-    int max_hp;
-    int hp;
-    int coins;
+    char* m_name;
+    int m_level;
+    int m_force;
+    int m_max_hp;
+    int m_hp;
+    int m_coins;
 };
 
 

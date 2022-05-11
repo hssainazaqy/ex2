@@ -9,71 +9,67 @@
 
 
     void Player::printInfo() const{
-        printPlayerInfo(name, level, force, hp, coins);
+        printPlayerInfo(m_name, m_level, m_force, m_hp, m_coins);
     }
 
-    
-    void Player::levelup(){
-        if(level < MAX_LEVEL){
-            level++;
+    void Player::levelUp(){
+        if(m_level < MAX_LEVEL){
+            m_level++;
         }
     }
-    
-    
+
+
     int Player::getLevel() const{
-        return level;
+        return m_level;
     }
 
-    
+
     void Player::buff(const int add_force){
-        force += add_force;
+        m_force += add_force;
     }
 
 
     void Player::heal(const int add_hp){
-        if((hp + add_hp) > (max_hp)){
-            hp = max_hp;
+        if((m_hp + add_hp) > (m_max_hp)){
+            m_hp = m_max_hp;
         }
         else{
-            hp += add_hp;
+            m_hp += add_hp;
         }
     }
 
-    
+
     void Player::damage(const int remove_hp){
-        if(hp - remove_hp < 0){
-            hp = 0;
+        if(m_hp - remove_hp < 0){
+            m_hp = 0;
         }
         else{
-            hp -= remove_hp;
+            m_hp -= remove_hp;
         }
     }
 
-    
+
     bool Player::isKnockedOut() const{
-        return(!hp);
+        return(!m_hp);
     }
 
 
     void Player::addCoins(const int coins_add){
-        coins += coins_add;
+        m_coins += coins_add;
     }
 
-    
+
     bool Player::pay(int coins_remove){
-        if(coins_remove > coins){
+        if(coins_remove > m_coins){
             return false;
         }
         else{
-            coins -= coins_remove;
+            m_coins -= coins_remove;
             return true;
         }
     }
 
 
     int Player::getAttackStrength() const{
-        return(level + force);
+        return (m_level + m_force);
     }
-
-
-    
