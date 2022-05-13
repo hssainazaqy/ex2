@@ -20,8 +20,8 @@ public:
      * @return
      *      A new instance of Player.
     */
-    explicit Player(char* _name, int _max_hp = 100, int _force = 5) 
-    : m_name(_name), m_max_hp(_max_hp), m_force(_force) , m_level(1), m_hp(_max_hp), m_coins(0){
+    explicit Player(const char*_name, int _max_hp = 100, int _force = 5) 
+    : m_name(_name), m_level(1) ,m_force(_force), m_max_hp(_max_hp), m_hp(_max_hp), m_coins(0){
     }
 
 
@@ -133,7 +133,7 @@ public:
 
 
 private:
-    char* m_name;
+    const char* m_name;
     int m_level;
     int m_force;
     int m_max_hp;

@@ -30,6 +30,10 @@
 
 
     void Player::heal(const int add_hp){
+        if(add_hp < 0){
+            return;
+        }
+
         if((m_hp + add_hp) > (m_max_hp)){
             m_hp = m_max_hp;
         }
@@ -40,6 +44,10 @@
 
 
     void Player::damage(const int remove_hp){
+        if(remove_hp < 0){
+            return;
+        }
+
         if(m_hp - remove_hp < 0){
             m_hp = 0;
         }

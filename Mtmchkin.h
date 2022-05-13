@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 //
 // Created by Daniel_Meents on 07/04/2022.
 //
@@ -46,7 +58,7 @@ public:
      *          True if the game ended
      *          False otherwise
      */
-    bool isOver();
+    bool isOver() const;
 
 
     /*
@@ -57,12 +69,14 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
+
+    ~Mtmchkin() = default;
+    Mtmchkin& operator=(const Mtmchkin& other) = default;
 
 private:
-    //TODO: complete the Mtmchkin class.
+    const char* m_playerName;
+    Card* m_cardsArray;
+    int m_numOfCards
 
 };
-
-
 #endif //EX2_GAME_H
