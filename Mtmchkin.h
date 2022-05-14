@@ -8,6 +8,7 @@
 #include "Card.h"
 #include <iostream>
 #include "Player.h"
+
 /*
  * GameStatus:
  * MidGame - The game is still active and the player continues to encounter cards.

@@ -1,4 +1,7 @@
 #include "Mtmchkin.h"
+
+#include "Card.h"
+#include "Player.h"
 #define MAX_LEVEL 10
 
 //--------------------------------------------------------------------------

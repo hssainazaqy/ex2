@@ -23,7 +23,7 @@ public:
      * @return
      *      A new instance of Player.
     */
-    explicit Player(const char*name, int max_hp = DEFAULT_HP , int force = DEFAULT_FORCE);
+    Player(const char*name, int max_hp = DEFAULT_HP , int force = DEFAULT_FORCE);
 
     /*
      * Prints the player info:
