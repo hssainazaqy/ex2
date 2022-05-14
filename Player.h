@@ -8,6 +8,9 @@
 #include <string>
 #include "utilities.h"
 
+#define DEFAULT_FORCE 5
+#define MAX_LEVEL 10
+#define DEFAULT_HP 100
 
 class Player {
 public:
@@ -20,10 +23,7 @@ public:
      * @return
      *      A new instance of Player.
     */
-    explicit Player(const char*_name, int _max_hp = 100, int _force = 5) 
-    : m_name(_name), m_level(1) ,m_force(_force), m_max_hp(_max_hp), m_hp(_max_hp), m_coins(0){
-    }
-
+    explicit Player(const char*name, int max_hp = DEFAULT_HP , int force = DEFAULT_FORCE);
 
     /*
      * Prints the player info:

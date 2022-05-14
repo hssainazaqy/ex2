@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 //
 // Created by Daniel_Meents on 07/04/2022.
 //
@@ -18,7 +7,7 @@
 #define EX2_GAME_H
 #include "Card.h"
 #include <iostream>
-
+#include "Player.h"
 /*
  * GameStatus:
  * MidGame - The game is still active and the player continues to encounter cards.
@@ -75,8 +64,10 @@ public:
 
 private:
     const char* m_playerName;
+    Player m_player;
     Card* m_cardsArray;
-    int m_numOfCards
+    GameStatus m_status;
+    int m_numOfCards;
 
 };
 #endif //EX2_GAME_H

@@ -4,9 +4,18 @@
 #include "Player.h"
 
 
-#define MAX_LEVEL 10
 
-
+    Player::Player(const char* name, int max_hp, int force):
+    m_name(name),m_level(1),m_force(force),m_max_hp(max_hp),m_hp(max_hp),m_coins(0)
+    {
+        if(max_hp <= 0){
+            m_max_hp = DEFAULT_HP;
+            m_hp = DEFAULT_HP;
+        }
+        if(force <=0){
+            m_force =   DEFAULT_FORCE;
+        }
+    }
 
     void Player::printInfo() const{
         printPlayerInfo(m_name, m_level, m_force, m_hp, m_coins);
