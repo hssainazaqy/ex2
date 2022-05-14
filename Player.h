@@ -10,7 +10,7 @@
 
 #define DEFAULT_FORCE 5
 #define MAX_LEVEL 10
-#define DEFAULT_HP 100
+#define DEFAULT_MAX_HP 100
 
 class Player {
 public:
@@ -23,7 +23,7 @@ public:
      * @return
      *      A new instance of Player.
     */
-    Player(const char*name, int max_hp = DEFAULT_HP , int force = DEFAULT_FORCE);
+    explicit Player(const char*name, int max_hp = DEFAULT_MAX_HP , int force = DEFAULT_FORCE);
 
     /*
      * Prints the player info:

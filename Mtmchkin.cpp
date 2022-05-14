@@ -1,14 +1,14 @@
 #include "Mtmchkin.h"
-
 #include "Card.h"
 #include "Player.h"
+
 #define MAX_LEVEL 10
 
 //--------------------------------------------------------------------------
 Mtmchkin::Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards)
 {
     m_playerName = playerName;
-    m_player = Player(playerName);
+    m_player = Player(playerName,DEFAULT_MAX_HP,DEFAULT_FORCE);
     //---------------------------------
     for (int i = 0;i < numOfCards;i++){
         m_cardsArray[i] = cardsArray[i];
@@ -25,6 +25,7 @@ void Mtmchkin::playNextCard(){
     curr_card.printInfo();
     curr_card.applyEncounter(m_player);
     m_player.printInfo();
+    //---------------------------------
     for(int i = 0; i < m_numOfCards - 1; i++){
         m_cardsArray[i] = m_cardsArray[i + 1];
     }
