@@ -5,18 +5,9 @@
 #define MAX_LEVEL 10
 
 //--------------------------------------------------------------------------
-Mtmchkin::Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards)
-{
-    m_playerName = playerName;
-    m_player = Player(playerName,DEFAULT_MAX_HP,DEFAULT_FORCE);
-    //---------------------------------
-    for (int i = 0;i < numOfCards;i++){
-        m_cardsArray[i] = cardsArray[i];
-    }
-    //---------------------------------
-    m_status = GameStatus::MidGame;
-    m_numOfCards = numOfCards;
-}
+Mtmchkin::Mtmchkin(const char* playerName, Card* cardsArray, int numOfCards):
+m_playerName(playerName) ,m_player(Player(playerName)),m_cardsArray(cardsArray),m_status(GameStatus::MidGame),m_numOfCards(numOfCards)
+{}
 
 //--------------------------------------------------------------------------
 void Mtmchkin::playNextCard(){

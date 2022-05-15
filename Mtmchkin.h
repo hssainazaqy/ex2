@@ -29,7 +29,7 @@ public:
      * @result
      *      An instance of Mtmchkin
     */
-    Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards);
+    Mtmchkin(const char* playerName, Card* cardsArray, int numOfCards);
 
 
     /*
