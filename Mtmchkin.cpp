@@ -4,12 +4,46 @@
 
 #define MAX_LEVEL 10
 
-//--------------------------------------------------------------------------
+//-------------------------constructors-------------------------------------
 Mtmchkin::Mtmchkin(const char* playerName, Card* cardsArray, int numOfCards):
-m_playerName(playerName) ,m_player(Player(playerName)),m_cardsArray(cardsArray),m_status(GameStatus::MidGame),m_numOfCards(numOfCards)
-{}
-
+                    m_playerName(playerName) ,m_player(Player(playerName)),m_cardsArray(new Card[numOfCards]),
+                    m_status(GameStatus::MidGame),m_numOfCards(numOfCards)
+{
+    for(int i = 0 ; i < numOfCards; i++){
+        m_cardsArray[i] = cardsArray[i];
+    }
+}
 //--------------------------------------------------------------------------
+Mtmchkin::~Mtmchkin(){
+    delete[] m_cardsArray;
+}
+//--------------------------------------------------------------------------
+Mtmchkin::Mtmchkin(const Mtmchkin& instance):m_playerName(instance.m_playerName) ,m_player(instance.m_player),
+                                            m_cardsArray(new Card[instance.m_numOfCards]),
+                                            m_status(instance.m_status),m_numOfCards(instance.m_numOfCards){
+
+    for(int i = 0 ; i < numOfCards; i++){
+        m_cardsArray[i] = instance.m_cardsArray[i];
+    }
+}
+//--------------------------------------------------------------------------
+    Mtmchkin& Mtmchkin::operator=(const Mtmchkin& other){
+        if(this == &other){
+            return *this;
+        }
+        m_player = other.m_player;
+        m_playerName = other.m_playerName;
+        m_numOfCards = other.m_numOfCards;
+        delete[] m_cardsArray;
+        m_cardsArray = new card[other.m_numOfCards];
+        m_status = other.m_status;
+        for(int i = 0 ; i < other.m_numOfCards; i++){
+        m_cardsArray[i] = other.m_cardsArray[i];
+        }
+        return *this;
+    }
+//--------------------------------------------------------------------------
+
 void Mtmchkin::playNextCard(){
 
     Card curr_card = *m_cardsArray;

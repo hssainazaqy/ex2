@@ -60,8 +60,9 @@ public:
     GameStatus getGameStatus() const;
 
 
-    ~Mtmchkin() = default;
-    Mtmchkin& operator=(const Mtmchkin& other) = default;
+    ~Mtmchkin();
+    Mtmchkin::Mtmchkin(const Mtmchkin& Mtmchkin);
+    Mtmchkin& operator=(const Mtmchkin& other);
 
 private:
     const char* m_playerName;

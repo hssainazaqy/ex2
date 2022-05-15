@@ -1,6 +1,3 @@
-
-#ifndef EX2_CARD_CPP
-#define EX2_CARD_CPP
 #include "Card.h"
 #include <iostream>
 
@@ -24,25 +21,16 @@ void Card::applyEncounter(Player& player) const
             player.damage(m_stats.hpLossOnDefeat);
             win = false;
             printBattleResult(win);
-            if(player.isKnockedOut()){
-                std::cout << "Player is knocked out";
-            }
         }
     }
     if(m_effect == CardType::Buff){
         if(player.pay(m_stats.cost)){
             player.buff(m_stats.buff);
         }
-        else{
-            std::cout << "Not enough coins";
-        }
     }
     if(m_effect == CardType::Heal){
         if(player.pay(m_stats.cost)){
             player.heal(m_stats.heal);
-        }
-        else{
-            std::cout << "Not enough coins";
         }
     }
     if(m_effect == CardType::Treasure){
@@ -70,12 +58,3 @@ void Card::printInfo() const
 }
 
 
-
-
-
-
-
-
-
-
-#endif
